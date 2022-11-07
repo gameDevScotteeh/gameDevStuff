@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/MainMenu.unity
+    guid: cb23611912c6e1648a23406bf4081899
+  - enabled: 1
+    path: Assets/Scenes/LavaShooter.unity
+    guid: 8ea7c9ce54f9c3b4c8d5c538421ba0f1
+  - enabled: 1
+    path: Assets/Scenes/ControlsScene.unity
+    guid: 98d6697b0809021458d6ec8a81f7a096
   m_configObjects: {}

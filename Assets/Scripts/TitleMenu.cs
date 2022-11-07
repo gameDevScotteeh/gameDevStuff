@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class TitleMenu : MonoBehaviour
 {
     public string firstLevel;
+    public string controls;
     
     public void NewGame()
     {
@@ -15,5 +16,10 @@ public class TitleMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void ControlsButton()
+    {
+        SceneManager.LoadSceneAsync(controls);
     }
 }

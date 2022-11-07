@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class KillPlayer : MonoBehaviour
+public class ControllsMenu : MonoBehaviour
 {
+    public string titleScene;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +16,9 @@ public class KillPlayer : MonoBehaviour
     void Update()
     {
         
+    }
+    public void QuitToMenu()
+    {
+        SceneManager.LoadSceneAsync(titleScene);
     }
 }
