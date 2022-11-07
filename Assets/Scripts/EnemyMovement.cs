@@ -31,4 +31,9 @@ public class EnemyMovement : MonoBehaviour
     {
         rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
     }
+
+    private void Awake()
+    {
+        player = FindObjectOfType<PlayerController>().transform;
+    }
 }
