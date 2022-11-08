@@ -52,9 +52,6 @@ TagManager:
   - name: BigObjects
     uniqueID: 1310145123
     locked: 0
-  - name: Walls
-    uniqueID: 789128867
-    locked: 0
   - name: Enemies
     uniqueID: 2858926201
     locked: 0
@@ -63,4 +60,7 @@ TagManager:
     locked: 0
   - name: Bullets
     uniqueID: 1202710385
+    locked: 0
+  - name: Walls
+    uniqueID: 789128867
     locked: 0
