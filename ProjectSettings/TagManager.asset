@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -11,8 +12,8 @@ TagManager:
   - 
   - Water
   - UI
-  - Player
   - Bullets
+  - Player
   - Enemy
   - 
   - 
@@ -56,9 +57,9 @@ TagManager:
   - name: Enemies
     uniqueID: 2858926201
     locked: 0
-  - name: Bullets
-    uniqueID: 1202710385
-    locked: 0
   - name: Player
     uniqueID: 3940375761
+    locked: 0
+  - name: Bullets
+    uniqueID: 1202710385
     locked: 0

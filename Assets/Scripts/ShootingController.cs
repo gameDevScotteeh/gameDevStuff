@@ -27,7 +27,10 @@ public class ShootingController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
-        Destroy(collision.gameObject);
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Destroy(collision.gameObject);
+        }
     }
     IEnumerator DestroyBlast()
     {
