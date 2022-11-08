@@ -26,9 +26,9 @@ public class EnemySpawn : MonoBehaviour
             for (int i = 0; i < spawnAmount; i++)
             {
                 GameObject spawnedObject = (GameObject)Instantiate(enemyPrefab);
-                spawnedObject.transform.Translate(Random.Range(-
-               spawnRange.x, spawnRange.x), Random.Range(-spawnRange.y,
-               spawnRange.y), 0);
+                    spawnedObject.transform.Translate(Random.Range(-
+                   spawnRange.x, spawnRange.x), Random.Range(-spawnRange.y,
+                   spawnRange.y), 0);
             }
             timePassed = 0;
         }

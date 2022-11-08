@@ -5259,7 +5259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1aac7516f15690469a20993abb0066d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstLevel: LavaShooter
+  firstLevel: LevelOne
   controls: ControlsScene
 --- !u!1 &1945178034
 GameObject:

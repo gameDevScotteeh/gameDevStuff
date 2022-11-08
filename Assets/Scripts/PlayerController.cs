@@ -26,6 +26,10 @@ public class PlayerController : MonoBehaviour
     private float dashCounter;
     private float dashCoolCounter;
 
+    private AudioSource audioSource;
+
+    public GameObject gameOverButton, restartButton, mainMenuButton;
+
 
 
     [SerializeField] private TrailRenderer tr;
@@ -38,6 +42,11 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         canShoot = true;
         activeMoveSpeed = playerSpeed;
+        audioSource = GetComponent<AudioSource>();
+
+        gameOverButton.SetActive(false);
+        restartButton.SetActive(false);
+        mainMenuButton.SetActive(false);
     }
 
     // Update is called once per frame
@@ -96,6 +105,7 @@ public class PlayerController : MonoBehaviour
         if (canShoot)
         {
             Shoot();
+            audioSource.PlayOneShot(audioSource.clip);
         }
 
     }
@@ -111,5 +121,16 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(timeBetweenShots);
         canShoot = true;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Enemy"))
+        {
+            gameOverButton.SetActive(true);
+            restartButton.SetActive(true);
+            mainMenuButton.SetActive(true);
+            gameObject.SetActive(false);
+        }
     }
 }
