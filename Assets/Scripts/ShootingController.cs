@@ -26,7 +26,7 @@ public class ShootingController : MonoBehaviour
         Destroy(gameObject);
         if (collision.gameObject.tag == "Enemy")
         {
-            Destroy(collision.gameObject);
+            //play bullet hitting anim
         }
     }
     IEnumerator DestroyBlast()
