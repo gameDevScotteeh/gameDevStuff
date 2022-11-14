@@ -5,14 +5,16 @@ using UnityEngine;
 public class RandomSpawner : MonoBehaviour
 {
     public Transform[] spawnPoints;
-    public GameObject EnemyPrefab;
+    public GameObject[] EnemyPrefab;
     public int spawnAmount = 1;
     public float timePassed = 0f;
     public float interval = 3f;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -23,10 +25,10 @@ public class RandomSpawner : MonoBehaviour
         {
             for (int i = 0; i < spawnAmount; i++)
             {
-                GameObject spawnedObject = (GameObject)Instantiate(EnemyPrefab);
                 foreach (Transform sp in spawnPoints)
                 {
-                    Instantiate(EnemyPrefab, sp.position, transform.rotation);
+                    int randEnemy = Random.Range(0, EnemyPrefab.Length);
+                    Instantiate(EnemyPrefab[randEnemy], sp.position, transform.rotation);
                 }
             }
             timePassed = 0;

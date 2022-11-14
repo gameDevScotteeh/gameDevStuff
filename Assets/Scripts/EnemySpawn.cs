@@ -9,6 +9,7 @@ public class EnemySpawn : MonoBehaviour
     public float timePassed = 0f;
     public Vector2 spawnRange;
     public float interval = 3f;
+    public float radius = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -25,10 +26,17 @@ public class EnemySpawn : MonoBehaviour
         {
             for (int i = 0; i < spawnAmount; i++)
             {
+                Vector2 randomPos;
+                randomPos.x = Random.Range(-spawnRange.x, spawnRange.x);
+                randomPos.y = Random.Range(-spawnRange.y, spawnRange.y);
+
+                while (Physics2D.OverlapCircle(randomPos, radius))
+                {
+                    randomPos.x = Random.Range(-spawnRange.x, spawnRange.x);
+                    randomPos.y = Random.Range(-spawnRange.y, spawnRange.y);
+                }
                 GameObject spawnedObject = (GameObject)Instantiate(enemyPrefab);
-                    spawnedObject.transform.Translate(Random.Range(-
-                   spawnRange.x, spawnRange.x), Random.Range(-spawnRange.y,
-                   spawnRange.y), 0);
+                spawnedObject.transform.Translate(randomPos, 0);
             }
             timePassed = 0;
         }
